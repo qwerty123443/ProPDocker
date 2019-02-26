@@ -1,0 +1,13 @@
+{% extends 'base.html.j2' %}
+
+{% block header %}
+  <h1>{% block title %}ATM File uploader{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+    <form method="post" enctype="multipart/form-data">
+        Select ATM Log to upload:
+        <input type="file" name="fileToUpload" id="fileToUpload">
+        <input type="submit" value="Upload ATM Log" name="submit">
+    </form>
+{% endblock %}

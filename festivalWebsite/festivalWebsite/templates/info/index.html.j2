@@ -1,0 +1,10 @@
+{% extends 'base.html.j2' %}
+
+{% block header %}
+  <h1>{% block title %}Main Page{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+  This is where the main content's going to be placed
+  <br><a href="{{ url_for('forum.index') }}">Forum</a>
+{% endblock %}

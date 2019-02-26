@@ -1,0 +1,31 @@
+<!doctype html>
+<head>
+{% block head %}{% endblock %}
+<title>{% block title %}{% endblock %} - festivalWebsite</title>
+</head>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<nav>
+  <h1><a href="{{ url_for('index') }}">festivalWebsite</a></h1>
+  <ul>
+    {% if g.user %}
+        {% if g.user['userType'] > 1 %}
+          <li><span><a href="{{ url_for('admin.checkadmin') }}">Admin options</a></span>
+        {% endif %}
+      <li><span><a href="{{ url_for('auth.accountInfo') }}">{{ g.user['username'] }}</a></span>
+      <li><span><a href="{{ url_for('auth.logout') }}">Log Out</a></span>
+    {% else %}
+      <li><a href="{{ url_for('auth.register') }}">Register</a>
+      <li><a href="{{ url_for('auth.login') }}">Log In</a>
+    {% endif %}
+  </ul>
+</nav>
+<section class="content">
+  <header>
+    {% block header %}{% endblock %}
+  </header>
+  {% for message in get_flashed_messages() %}
+    <div class="flash">{{ message }}</div>
+  {% endfor %}
+  {% block content %}{% endblock %}
+</section>

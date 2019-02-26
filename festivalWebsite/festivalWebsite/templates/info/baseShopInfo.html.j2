@@ -1,0 +1,17 @@
+<article class="post">
+    <header>
+    <div>
+      <h1><a href="{{ url_for('shopeditor.getShopByID', shopID = shop['shopID']) }}">{{ shop['shopID'] }}: {{ shop['shopName'] }}</a></h1>
+      <h2>Shop owner: {{ shop['ownerID'] }}</h2>
+        <form style="display:inline" action="{{ url_for('shopeditor.removeShop', shopID = shop['shopID']) }}">
+          <input type="submit" value="Remove shop" />
+        </form>
+        <form style="display:inline" action="">
+          <input type="submit" value="Do litterally nothing" />
+        </form>
+    </div>
+    </header>
+    <div class="body">
+
+    </div>
+</article>

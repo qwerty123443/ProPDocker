@@ -1,0 +1,16 @@
+{% extends 'base.html.j2' %}
+
+{% block header %}
+  <h1>{% block title %}Admin Page{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+  <h1>congrats! you are an admin</h1>
+  <a href="{{ url_for('admin.listAccounts') }}">Account info</a> <br>
+  <a href="{{ url_for('admin.getVisitors') }}">Visitor status & Visitor history</a> <br>
+  <a href="{{ url_for('admin.getCampingStats') }}">Camping statistics</a> <br>
+  <a href="{{ url_for('admin.listSalesInfo') }}">Shop/sales info</a><br>
+  <a href="{{ url_for('shopeditor.shopeditor') }}">Shop editor</a><br>
+  <a href="{{ url_for('admin.sqlPage') }}">Run a SQL query</a><br>
+  <a href="{{ url_for('admin.atmProcessor') }}">Upload ATM File</a>
+{% endblock %}

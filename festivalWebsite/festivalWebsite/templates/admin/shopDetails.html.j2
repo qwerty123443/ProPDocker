@@ -1,0 +1,38 @@
+{% extends 'base.html.j2' %}
+
+{% block header %}
+  <h1>{% block title %}Shop Info{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+    {% include 'info/baseShopInfo.html.j2' %}
+    <hr>
+    <form method="post" action="{{ url_for('shopeditor.addProduct', shopID=shop['shopID'] ) }}">
+        <label for="ItemName">Item Name</label>
+        <input name="ItemName" id="ItemName" required>
+        <label for="ItemDescription">Item Description</label>
+        <input name="ItemDescription" id="ItemDescription" required>
+        <label for="ItemPrice">Item Price</label>
+        <input name="ItemPrice" id="ItemPrice" required>
+        <input type="submit" value="Add item">
+        <hr>
+    </form>
+    <div>
+    {% for item in items %}
+        <article class="post">
+          <header>
+            <div>
+              <h1>{{ item['name'] }}</h1>
+            </div>
+          </header>
+          <div class="body">
+            €{{ item['price'] }}
+            {{ item['description'] }}
+          </div>
+        </article>
+        {% if not loop.last %}
+            <hr>
+        {% endif %}
+    {% endfor %}
+    </div>
+{% endblock %}

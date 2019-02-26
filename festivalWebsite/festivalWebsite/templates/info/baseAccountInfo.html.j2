@@ -1,0 +1,22 @@
+<article class="post">
+  <header>
+    <div>
+      <h1>Username: {{ user['username'] }}</h1>
+    </div>
+  </header>
+  <div class="body">
+    UserID: {{ user['id'] }}
+    Balance: {{ user['balance'] }}
+    Can enter festival: {{ user['hasFestivalTicket'] }}
+    Can enter camping: {{ user['hasCampingTicket'] }}
+    User type: {{ user['userType'] }}
+    First name: {{ user['firstname'] }}
+    Last name: {{ user['lastname'] }}
+    Birthdate: {{ user['birthdate'] }}
+    Street: {{ user['street'] }}
+    House number: {{ user['housenumber'] }}{{ user['housenumberaddition'] }}
+    City: {{ user['city'] }}
+    Province: {{ user['province'] }}
+    Email: {{ user['email'] }}
+  </div>
+</article>

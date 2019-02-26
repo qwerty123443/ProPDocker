@@ -1,0 +1,36 @@
+{% extends 'base.html.j2' %}
+
+{% block head %}
+<script>
+
+function search() {
+    window.location.href = '{{ url_for('shopeditor.shopeditor') }}'+document.getElementById("Shop Name").value+'/';
+    return true;
+}
+
+</script>
+{% endblock %}
+
+{% block header %}
+  <h1>{% block title %}Shop Info{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+    <form method="post">
+        <label for="ShopName">Shop Name</label>
+        <input name="ShopName" id="Shop Name" required>
+        <input type="button" onclick="javascript:search()" value="Search for shop">
+        <input type="submit" value="Add shop">
+        <hr>
+    </form>
+    {% if shops %}
+        <hr>
+    {% endif %}
+    {% for shop in shops %}
+        {% include 'info/baseShopInfo.html.j2' %}
+        {% if not loop.last %}
+            <hr>
+        {% endif %}
+      {% endfor %}
+
+{% endblock %}

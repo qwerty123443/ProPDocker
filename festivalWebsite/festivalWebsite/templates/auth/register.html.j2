@@ -1,0 +1,49 @@
+{% extends 'base.html.j2' %}
+
+{% block header %}
+  <h1>{% block title %}Register{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+  <form method="post">
+    <label for="username">Username</label>
+    <input name="username" id="username" value="{{ form['username'] }}" required>
+
+    <label for="password">Password</label>
+    <input type="password" name="password" id="password"required>
+
+    <label for="password">Password (confirm)</label>
+    <input type="password" name="passwordconfirm" id="passwordconfirm"required>
+
+    <label for="userType">User type</label>
+    <input name="userType" id="userType" value="{{ form['userType'] }}" required>
+
+    <label for="firstname">First name</label>
+    <input name="firstname" id="firstname" value="{{ form['firstname'] }}" required>
+
+    <label for="lastname">Last name</label>
+    <input name="lastname" id="lastname" value="{{ form['lastname'] }}" required>
+
+    <label for="birthdate">Birthdate</label>
+    <input name="birthdate" type="date" id="birthdate" value="{{ form['birthdate'] }}" required>
+
+    <label for="street">Street</label>
+    <input name="street" id="street" value="{{ form['street'] }}" required>
+
+    <label for="housenumber">House number</label>
+    <input name="housenumber" id="housenumber" value="{{ form['housenumber'] }}" required>
+
+    <label for="housenumberaddition">Addition</label>
+    <input name="housenumberaddition" id="housenumberaddition" value="{{ form['housenumberaddition'] }}" >
+
+    <label for="city">City</label>
+    <input name="city" id="city" value="{{ form['city'] }}" required>
+
+    <label for="province">Province</label>
+    <input name="province" id="province" value="{{ form['province'] }}" required>
+
+    <label for="email">Email</label>
+    <input name="email" id="email" type="email" value="{{ form['email'] }}" required>
+    <input type="submit" value="Register">
+  </form>
+{% endblock %}

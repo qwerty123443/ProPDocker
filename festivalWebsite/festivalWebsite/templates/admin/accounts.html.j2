@@ -1,0 +1,10 @@
+{% extends 'info/accountInfo.html.j2' %}
+
+{% block content %}
+  {% for user in users %}
+    {% include 'info/baseAccountInfo.html.j2' %}
+    {% if not loop.last %}
+        <hr>
+    {% endif %}
+  {% endfor %}
+{% endblock %}

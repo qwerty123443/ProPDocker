@@ -1,0 +1,14 @@
+{% extends 'base.html.j2' %}
+
+{% block header %}
+    <h1>Total spots taken: {{ totals['spotsTaken'] }} || Total camping visitors: {{ totals['userCount'] }}</h1>
+{% endblock %}
+
+{% block content %}
+  {% for spot in perCamping %}
+    <p class="body">
+        spotID: {{ spot['spotID'] }}
+        People on spot: {{ spot['peopleOnSpot'] }}
+    </p>
+  {% endfor %}
+{% endblock %}
